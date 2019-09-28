@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>453236472104-catkddfes60u5i51c76lbrumen4jslus.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.453236472104-catkddfes60u5i51c76lbrumen4jslus</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBkbyG4RXJdgJ-l3YRFkajPAWlzIRYEmxc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>453236472104</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.cbarcenam.QA</string>
+	<key>PROJECT_ID</key>
+	<string>quarry-access-wa-5c7fd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quarry-access-wa-5c7fd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:453236472104:ios:b39ea409700f406b44f81d</string>
+	<key>DATABASE_URL</key>
+	<string>https://quarry-access-wa-5c7fd.firebaseio.com</string>
+</dict>
+</plist>
