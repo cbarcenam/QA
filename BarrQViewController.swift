@@ -23,17 +23,35 @@ class BarrQViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let db = Firestore.firestore()
+        
+        db.collection("Updates").document("Barrington")
+            .addSnapshotListener { documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                    self.BarrQAccessCode.text! = ("Error fetching document: \(error!)")
+                    return
+                }
+                guard let data = document.get("Code") else {
+                    self.BarrQAccessCode.text! = ("Document data was empty.")
+                    return
+                }
+                self.BarrQAccessCode.text! = (" \(data)")
+        }
+        
+        db.collection("Updates").document("MountainQ")
+            .addSnapshotListener { documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                    self.BarrQDateLabel.text! = ("Error fetching document: \(error!)")
+                    return
+                }
+                guard let date = document.get("Date") else {
+                    self.BarrQDateLabel.text! = ("Document data was empty.")
+                    return
+                }
+                self.BarrQDateLabel.text! = (" \(date)")
+        }
     }
-     let db = Firestore.firestore()
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

@@ -23,17 +23,35 @@ class StnQViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+     
+        let db = Firestore.firestore()
+        
+        db.collection("Updates").document("Statham")
+            .addSnapshotListener { documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                    self.StnQAccessCode.text! = ("Error fetching document: \(error!)")
+                    return
+                }
+                guard let data = document.get("Code") else {
+                    self.StnQAccessCode.text! = ("Document data was empty.")
+                    return
+                }
+                self.StnQAccessCode.text! = (" \(data)")
+        }
+        
+        db.collection("Updates").document("MountainQ")
+            .addSnapshotListener { documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                    self.StnQDateLabel.text! = ("Error fetching document: \(error!)")
+                    return
+                }
+                guard let date = document.get("Date") else {
+                    self.StnQDateLabel.text! = ("Document data was empty.")
+                    return
+                }
+                self.StnQDateLabel.text! = (" \(date)")
+        }
+        
     }
-     let db = Firestore.firestore()
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
 }
